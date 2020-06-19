@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-npm-helloworl-acl54",
+  "version": "1.0.2",
+  "description": "modul de proves",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}

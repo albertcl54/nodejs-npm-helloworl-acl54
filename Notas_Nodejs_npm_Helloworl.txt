@@ -1,0 +1,421 @@
+npm - publicar primer modulo
+Este es un ejemplo practico de Nodejs y Javascript, en el que aprenderemos a publicar un modulo de Node en npmjs.com, 
+el registro de repositorio de código de Node.
+https://www.youtube.com/watch?time_continue=28&v=grOjfJpqwyw&feature=emb_logo
+
+*********************>>  APLICACION iniciada   <<*******************************************************
+Nodejs_npm_Helloworl
+
+npm init --yes		Crea paquete fichero Package.json (Archivo de configuracion)
+npm i axios
+
+dependencies
+		axios		modulo que vincula dependecias para con nuestro proyecto
+arranca con node src/index.js
+
+Se tiene que subir el modulo a 	NPM	npm es el sistema de gestión de paquetes por defecto para Node.js, 
+								un entorno de ejecución para JavaScript, bajo Artistic License 2.0.
+Full Name				Albert Clemente
+Public Email			acllovera1954@gmail.com
+Username				albertcl
+Password				aclmmonite
+
+loguearse desde consola       
+
+npm loguin
+responde :  username :  albertcl
+			Password :	aclmmonite
+			Email    :	acllovera1954@gmail.com
+responde :  Logged in as albertcl on https://registry.npmjs.org/.
+
+comando   	npm whoami    	dice el usuario que esta logueado             
+			npm publish		subir modulo a npm
+							responde:	+ nodejs-npm-helloworl-acl54@1.0.1
+			(para añadir codigo al modulo ya en NPM primero cambiar la version  y 
+			luego el mismo comando >>>  npm publish)
+				+ nodejs-npm-helloworl-acl54@1.0.2
+CREAMOS PROYECTO ADICIONAL DONDE INCORPORAREMOS NUESTRO MODULO DE NPM	
+Nodejs_npm_Helloworl2		arranca con node index.js
+	en index.js 	npm i nodejs-npm-helloworl-acl54		(instala el nuevo modulo en nuestro nuevo proyecto)
+crear una cuenta en GITHUB
+	username :  albertcl54
+	Password :	aclmmonite1954
+	Email    :	acllovera1954@gmail.com
+	Repository name :	nodejs-npm-helloworl-acl54
+	personal token 		nodejs-npm-helloworl-acl54
+	
+copiar de GITHUB >>>  git remote add origin https://github.com/albertcl54/nodejs-npm-helloworl-acl54.git
+tenemos que iniciar el repositorio:
+descargar   https://git-scm.com/download/win
+instalar GIT 2.27.0
+
+https://github.com/
+**************************Bajar codigo del repositorio ***************************
+clone or download	>>	copiar URL del repositorio  (***)
+vamo a VISUAL STUDIO CODE
+wiew/Command Palette (CTRL + Shift + P)  >>   git Clone
+pegamos la URL copiada antes (***)
+Seleccionamos carpeta para descargar el codigo carpeta vacia
+git status			respuesta (On branch master)
+					No commits yet
+					nothing to commit (create/copy files and use "git add" to track)
+
+git remote add albertcl54 https://github.com/albertcl54/nodejs-npm-helloworl-acl54
+git push --set-upstream albertcl54 master
+git push albertcl54							para insertar codigo
+
+==================================================================================
+**************************Subir codigo al repositorio ***************************
+==================================================================================
+IR A CONTROL DE CODIGO FUENTE (margen izquierdo - debajo buscar)
+iniciar repositorio
+nos pregunta carpeta del repositorio		facilitar la del proyecto actual
+U pendiente de cambio   A actualizado	M modificacion
+puedes seleccionar individualmente o por la totalidad dandole al + en cambios
+darle a confirmar y nos pide nombre de la actualizacion  <poner nombre>
+efectua el commit (actualizacion)
+si luego hacemos cualquier modificacion aparece el fichero modificado y hace constar que hay un cambio M
+si vamos al fichero en la linea del cambio aparece:
+azul margen izquierdo - si pulsamos sobre el azul nos dice cual ha sido el cambio (rojo anterior // azul actual)
+rojo margen izquierdo - si pulsamos sobre el rojo nos dice lo que se suprimio (rojo lo anterior)
+margen superior derecho icono abrir cambios:
+		divide terminal en dos partes izquierda(solo lectura) lo que fue <> derecha lo que es (puede editar)
+		margen superior flechas anterior y posterior para saltar al cambio siguiente
+		anular ventana dandole nuevamente al icono superior derecho
+terminal: comando git status
+			si hubo cambios y no se guardaro responde del cambio en rojo		
+			si se guardo y se modifico en el repositorio aparece en verde
+CONFIGURAR GUIT BASH icono izquierdo Administracion / configuracion
+			terminal.integrated.automationShell.windows
+			editar en settings.json
+				"terminal.integrated.automationShell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"
+			ir a pestana derecha powershell desplegar y pedir (seleccionar el shell predeterminado) se abre seleccion y marcar Git bash
+			tendremos posibilidad de dividir terminal en powershell  y  Git bash
+para guardar cambios : poner titulo del cambio y darle a confirmar [comit]
+$ git log	da todos los cambios [comit]
+$ clear 	limpiar
+parte inferior izquierda [master] si presionamos nos da la posibilidad de crear una nueva rama dos versiones del mismo programa
+		presionando en inferior izquierda nos da la posibilidad de alternar entre las dos ramas
+			
+
+
+
+git config --global user.name"albertcl"
+
+
+marca los repositorios disponibles pulsamos en /albertcl54/nodejs-npm-helloworl-acl54  (https://github.com/albertcl54/nodejs-npm-helloworl-acl54)
+Set up in desktop
+Quick setup — if you’ve done this kind of thing before
+open the repository in your external editor [Open in visual estudio code]
+abre nuevo editor Visual estudio code
+
+
+Notas_Nodejs_npm_Helloworl.txt
+        node_modules/
+        package-lock.json
+        package.json
+        src/
+==========================================================================
+minuto 21>31 todo OK en 8:15   PRIMERA PARTE (BACKEND)
+
+recurso externo (lista de usuarios)	https://jsonplaceholder.typicode.com/users?_limit=2
+aplicamos la extension JSON viewer de explorador Chrome para recortar el contenido a solo dos usuarios con ?_limit2
+https://jsonplaceholder.typicode.com/users?_limit=2
+****luego ver video comun line interface CLI 		
+	herramientas :	Babel
+					jei eslog
+					jeis docs
+					linters
+					typescript
+oooooooooooooooooooooooooooooooooooooooooooooooooooOOOOOOOOOOOOOOOOoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+const users = async () => {
+    const res =await axios.get('https://jsonplaceholder.typicode.com/users?_limit=2')
+    console.log(res)
+}
+users();
+FACILITA POR CONSOLA ESTOS DATOS  	|
+								   \|/ 
+									V
+ status: 200,
+  statusText: 'OK',
+  headers: {
+    date: 'Wed, 17 Jun 2020 05:36:32 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'transfer-encoding': 'chunked',
+    connection: 'close',
+    'set-cookie': [
+      '__cfduid=d92b33cd8cd30624d359cf960f66de4b01592372192; expires=Fri, 17-Jul-20 05:36:32 GMT; path=/; domain=.typicode.com; HttpOnly; SameSite=Lax'
+    ],
+    'x-powered-by': 'Express',
+    vary: 'Origin, Accept-Encoding',
+    'access-control-allow-credentials': 'true',
+    'cache-control': 'max-age=43200',
+    pragma: 'no-cache',
+    expires: '-1',
+    'x-total-count': '10',
+    'access-control-expose-headers': 'X-Total-Count',
+    'x-content-type-options': 'nosniff',
+    etag: 'W/"45c-uonB+X+ufKydp7NkoDHZYVCTYEk"',
+    via: '1.1 vegur',
+    'cf-cache-status': 'HIT',
+    age: '1761',
+    'cf-request-id': '0362607dd40000ef2e4e1a6200000001',
+    'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+    server: 'cloudflare',
+    'cf-ray': '5a4a69dc8d49ef2e-MIA'
+  },
+  config: {
+    url: 'https://jsonplaceholder.typicode.com/users?_limit=2',
+    method: 'get',
+    headers: {
+      Accept: 'application/json, text/plain, */*',
+      'User-Agent': 'axios/0.19.2'
+    },
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    adapter: [Function: httpAdapter],
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    validateStatus: [Function: validateStatus],
+    data: undefined
+  },
+  request: <ref *1> ClientRequest {
+    _events: [Object: null prototype] {
+      socket: [Function (anonymous)],
+      abort: [Function (anonymous)],
+      aborted: [Function (anonymous)],
+      error: [Function (anonymous)],
+      timeout: [Function (anonymous)],
+      prefinish: [Function: requestOnPrefinish]
+    },
+    _eventsCount: 6,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    _last: true,
+    chunkedEncoding: false,
+    shouldKeepAlive: false,
+    useChunkedEncodingByDefault: false,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    _contentLength: 0,
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    socket: TLSSocket {
+      _tlsOptions: [Object],
+      _secureEstablished: true,
+      _securePending: false,
+      _newSessionPending: false,
+      _controlReleased: true,
+      secureConnecting: true,
+      _SNICallback: null,
+      servername: 'jsonplaceholder.typicode.com',
+      alpnProtocol: false,
+      authorized: true,
+      authorizationError: null,
+      encrypted: true,
+      _events: [Object: null prototype],
+      _eventsCount: 10,
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: 'jsonplaceholder.typicode.com',
+      _readableState: [ReadableState],
+      readable: true,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      writable: false,
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: undefined,
+      _server: null,
+      ssl: [TLSWrap],
+      _requestCert: true,
+      _rejectUnauthorized: true,
+      parser: null,
+      _httpMessage: [Circular *1],
+      [Symbol(res)]: [TLSWrap],
+      [Symbol(asyncId)]: 5,
+      [Symbol(kHandle)]: [TLSWrap],
+      [Symbol(kSetNoDelay)]: false,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(connect-options)]: [Object]
+    },
+    _header: 'GET /users?_limit=2 HTTP/1.1\r\n' +
+      'Accept: application/json, text/plain, */*\r\n' +
+      'User-Agent: axios/0.19.2\r\n' +
+      'Host: jsonplaceholder.typicode.com\r\n' +
+      'Connection: close\r\n' +
+      '\r\n',
+    _onPendingData: [Function: noopPendingOutput],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 443,
+      protocol: 'https:',
+      options: [Object],
+      requests: {},
+      sockets: [Object],
+      freeSockets: {},
+      keepAliveMsecs: 1000,
+      keepAlive: false,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      maxCachedSessions: 100,
+      _sessionCache: [Object],
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'GET',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    path: '/users?_limit=2',
+    _ended: true,
+    res: IncomingMessage {
+      _readableState: [ReadableState],
+      readable: false,
+      _events: [Object: null prototype],
+      _eventsCount: 3,
+      _maxListeners: undefined,
+      socket: [TLSSocket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      headers: [Object],
+      rawHeaders: [Array],
+      trailers: {},
+      rawTrailers: [],
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 200,
+      statusMessage: 'OK',
+      client: [TLSSocket],
+      _consuming: true,
+      _dumped: false,
+      req: [Circular *1],
+      responseUrl: 'https://jsonplaceholder.typicode.com/users?_limit=2',
+      redirects: [],
+      [Symbol(kCapture)]: false
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    _redirectable: Writable {
+      _writableState: [WritableState],
+      writable: true,
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      _options: [Object],
+      _redirectCount: 0,
+      _redirects: [],
+      _requestBodyLength: 0,
+      _requestBodyBuffers: [],
+      _onNativeResponse: [Function (anonymous)],
+      _currentRequest: [Circular *1],
+      _currentUrl: 'https://jsonplaceholder.typicode.com/users?_limit=2',
+      [Symbol(kCapture)]: false
+    },
+    [Symbol(kCapture)]: false,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      accept: [Array],
+      'user-agent': [Array],
+      host: [Array]
+    }
+  },
+  data: [
+    {
+      id: 1,
+      name: 'Leanne Graham',
+      username: 'Bret',
+      email: 'Sincere@april.biz',
+      address: [Object],
+      phone: '1-770-736-8031 x56442',
+      website: 'hildegard.org',
+      company: [Object]
+    },
+    {
+      id: 2,
+      name: 'Ervin Howell',
+      username: 'Antonette',
+      email: 'Shanna@melissa.tv',
+      address: [Object],
+      phone: '010-692-6593 x09125',
+      website: 'anastasia.net',
+      company: [Object]
+    }
+  ]
+}
+oooooooooooooooooooooooooooooooooooooooooooooooooooOOOOOOOOOOOOOOOOoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+users().then(res => console.log(res)); //promesa equivalente al async await  |
+																			\|/
+																			 V
+																			 
+{
+    id: 1,
+    name: 'Leanne Graham',
+    username: 'Bret',
+    email: 'Sincere@april.biz',
+    address: {
+      street: 'Kulas Light',
+      suite: 'Apt. 556',
+      city: 'Gwenborough',
+      zipcode: '92998-3874',
+      geo: [Object]
+    },
+    phone: '1-770-736-8031 x56442',
+    website: 'hildegard.org',
+    company: {
+      name: 'Romaguera-Crona',
+      catchPhrase: 'Multi-layered client-server neural-net',
+      bs: 'harness real-time e-markets'
+    }
+  },
+  {
+    id: 2,
+    name: 'Ervin Howell',
+    username: 'Antonette',
+    email: 'Shanna@melissa.tv',
+    address: {
+      street: 'Victor Plains',
+      suite: 'Suite 879',
+      city: 'Wisokyburgh',
+      zipcode: '90566-7771',
+      geo: [Object]
+    },
+    phone: '010-692-6593 x09125',
+    website: 'anastasia.net',
+    company: {
+      name: 'Deckow-Crist',
+      catchPhrase: 'Proactive didactic contingency',
+      bs: 'synergize scalable supply-chains'
+    }
+  }
+]
+																			 
+																			 
